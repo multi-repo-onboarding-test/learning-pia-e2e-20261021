@@ -1,0 +1,5 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+reviews:
+  path_instructions:
+    - path: src/{members,teams}.ts
+      instructions: "When changing `getMember` or `getTeam`, preserve the read contract: return `undefined` for 404, throw `HttpStatusError` with the response status for other non-OK responses, and parse successful responses as JSON. If intentionally changing that contract, update the shared read tests to document the change."
